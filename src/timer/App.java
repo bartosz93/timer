@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,6 +33,7 @@ public class App {
 		JButton stopButton = new JButton("Stop");
 		JButton restartButton = new JButton("Reset");
 		JLabel label = new JLabel(new Timer(0).toString());
+		label.setBorder(BorderFactory.createEmptyBorder(0,95,0,0));
 		listeners.add(new TimerStateChangedEventListener(label));
 		
 		startButton.addActionListener(new StartButtonActionListener(timer));
@@ -43,12 +45,13 @@ public class App {
 		buttonsPanel.add(restartButton);
 		
 		frame.add(label);
-		frame.add(buttonsPanel, BorderLayout.CENTER);
+		frame.add(buttonsPanel);
 		
 		frame.setLayout(new GridLayout(0, 1));
 		frame.setTitle("Timer");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		frame.setResizable(false);
 		frame.pack();
 	}
 }
