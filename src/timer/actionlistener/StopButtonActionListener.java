@@ -1,7 +1,9 @@
-package timer;
+package timer.actionlistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import timer.TimerState;
 
 public class StopButtonActionListener implements ActionListener {
 	

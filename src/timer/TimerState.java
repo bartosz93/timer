@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.swing.Timer;
 
+import timer.eventlistener.TimerStateChangedEvent;
+
 public class TimerState {
 	
 	private int secondsPassed = 0;

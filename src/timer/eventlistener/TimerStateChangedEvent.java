@@ -1,4 +1,4 @@
-package timer;
+package timer.eventlistener;
 
 public interface TimerStateChangedEvent {
 	

@@ -1,6 +1,8 @@
-package timer;
+package timer.eventlistener;
 
 import javax.swing.JLabel;
+
+import timer.Timer;
 
 public class TimerStateChangedEventListener implements TimerStateChangedEvent {
 	
