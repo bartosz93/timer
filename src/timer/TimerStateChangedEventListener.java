@@ -12,6 +12,6 @@ public class TimerStateChangedEventListener implements TimerStateChangedEvent {
 	
 	@Override
 	public void onTimerStateChanged(int seconds) {
-		this.label.setText(""+seconds);
+		this.label.setText(new Timer(seconds).toString());
 	}
 }
