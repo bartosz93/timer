@@ -23,14 +23,17 @@ public class App {
 		JPanel buttonsPanel = new JPanel();
 		JButton startButton = new JButton("Start");
 		JButton stopButton = new JButton("Stop");
+		JButton restartButton = new JButton("Reset");
 		JLabel label = new JLabel(new Timer(0).toString());
 		listeners.add(new TimerStateChangedEventListener(label));
 
 		startButton.addActionListener(new StartButtonActionListener(timer));
 		stopButton.addActionListener(new StopButtonActionListener(timer));
+		restartButton.addActionListener(new RestartButtonActionListener(timer));
 
 		buttonsPanel.add(startButton);
 		buttonsPanel.add(stopButton);
+		buttonsPanel.add(restartButton);
 
 		frame.add(label);
 		frame.add(buttonsPanel, BorderLayout.CENTER);

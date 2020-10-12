@@ -16,11 +16,7 @@ public class TimerState {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			secondsPassed++;
-			
-			for (TimerStateChangedEvent listener : listeners) {
-				listener.onTimerStateChanged(secondsPassed);
-			}
-			
+			runListeners();
 		}
 
 	});
@@ -38,6 +34,15 @@ public class TimerState {
 	}
 
 	public void restart() {
-		timer.restart();
+		timer.stop();
+		secondsPassed = 0;
+		this.runListeners();
+	}
+	
+	private void runListeners() {
+		for (TimerStateChangedEvent listener : listeners) {
+			listener.onTimerStateChanged(secondsPassed);
+		}
+		
 	}
 }
